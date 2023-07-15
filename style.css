@@ -1,0 +1,65 @@
+:root {
+  --shadow-button: -10px -10px 15px 0px rgba(0, 0, 0, 0.15);
+  --shadow-button-pop: 10px 10px 35px 10px rgba(0, 0, 0, 0.2);
+  --shadow-border: 0px 0px 1px 5px rgba(0, 0, 0, 0.15);
+  --shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.1);
+}
+
+body,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pop {
+  display: inline-block;
+  background-color: #fff;
+  border: 12px solid #fff;
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+#pop > div {
+  overflow: hidden;
+  box-shadow: inset var(--shadow);
+}
+
+#pop > div:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+button {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #fff;
+  padding: 12px;
+}
+
+button::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  display: block;
+  box-shadow: inset var(--shadow-button), var(--shadow-border);
+  content: "";
+}
+
+button.pop::before {
+  box-shadow: inset var(--shadow-button-pop), var(--shadow-border);
+}
